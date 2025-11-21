@@ -1,0 +1,6 @@
+@OpenRA.Converter.Api_HostAddress = http://localhost:5255
+
+GET {{OpenRA.Converter.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

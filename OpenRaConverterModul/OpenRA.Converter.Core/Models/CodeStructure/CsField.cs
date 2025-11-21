@@ -17,5 +17,6 @@
         /// and should be loaded from YAML.
         /// </summary>
         public bool IsExposedToYaml { get; set; }
+        public string Description { get; set; }
     }
 }

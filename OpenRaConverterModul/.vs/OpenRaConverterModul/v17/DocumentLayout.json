@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F5A4F536-72E1-48D5-8A4B-50B46C224B62}|OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj|c:\\users\\biote\\desktop\\oe_lagrange_side_projects\\openraconvertermodul\\openraconvertermodul\\openra.converter.infrastructure\\services\\traitsynthesisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A4F536-72E1-48D5-8A4B-50B46C224B62}|OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj|solutionrelative:openra.converter.infrastructure\\services\\traitsynthesisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C54170-D1B7-49DA-BC01-AA2E7BB5FABF}|OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj|c:\\users\\biote\\desktop\\oe_lagrange_side_projects\\openraconvertermodul\\openraconvertermodul\\openra.converter.core\\models\\codestructure\\csfield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C54170-D1B7-49DA-BC01-AA2E7BB5FABF}|OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj|solutionrelative:openra.converter.core\\models\\codestructure\\csfield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3C54170-D1B7-49DA-BC01-AA2E7BB5FABF}|OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj|c:\\users\\biote\\desktop\\oe_lagrange_side_projects\\openraconvertermodul\\openraconvertermodul\\openra.converter.core\\models\\codestructure\\csclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3C54170-D1B7-49DA-BC01-AA2E7BB5FABF}|OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj|solutionrelative:openra.converter.core\\models\\codestructure\\csclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{49B913C6-AE99-4041-BB8B-273E911B56BB}|OpenRA.Converter.Api\\OpenRA.Converter.Api.csproj|c:\\users\\biote\\desktop\\oe_lagrange_side_projects\\openraconvertermodul\\openraconvertermodul\\openra.converter.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{49B913C6-AE99-4041-BB8B-273E911B56BB}|OpenRA.Converter.Api\\OpenRA.Converter.Api.csproj|solutionrelative:openra.converter.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -35,10 +47,6 @@
       "RelativeMoniker": "D:0:0:{F5A4F536-72E1-48D5-8A4B-50B46C224B62}|OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj|solutionrelative:openra.converter.infrastructure\\services\\csharpcodewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3C54170-D1B7-49DA-BC01-AA2E7BB5FABF}|OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj|c:\\users\\biote\\desktop\\oe_lagrange_side_projects\\openraconvertermodul\\openraconvertermodul\\openra.converter.core\\models\\codestructure\\csclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3C54170-D1B7-49DA-BC01-AA2E7BB5FABF}|OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj|solutionrelative:openra.converter.core\\models\\codestructure\\csclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C3C54170-D1B7-49DA-BC01-AA2E7BB5FABF}|OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj|c:\\users\\biote\\desktop\\oe_lagrange_side_projects\\openraconvertermodul\\openraconvertermodul\\openra.converter.core\\models\\codestructure\\csmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3C54170-D1B7-49DA-BC01-AA2E7BB5FABF}|OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj|solutionrelative:openra.converter.core\\models\\codestructure\\csmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,16 +59,8 @@
       "RelativeMoniker": "D:0:0:{49B913C6-AE99-4041-BB8B-273E911B56BB}|OpenRA.Converter.Api\\OpenRA.Converter.Api.csproj|solutionrelative:openra.converter.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5A4F536-72E1-48D5-8A4B-50B46C224B62}|OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj|c:\\users\\biote\\desktop\\oe_lagrange_side_projects\\openraconvertermodul\\openraconvertermodul\\openra.converter.infrastructure\\services\\traitsynthesisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5A4F536-72E1-48D5-8A4B-50B46C224B62}|OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj|solutionrelative:openra.converter.infrastructure\\services\\traitsynthesisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C3C54170-D1B7-49DA-BC01-AA2E7BB5FABF}|OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj|c:\\users\\biote\\desktop\\oe_lagrange_side_projects\\openraconvertermodul\\openraconvertermodul\\openra.converter.core\\models\\codestructure\\csparameter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3C54170-D1B7-49DA-BC01-AA2E7BB5FABF}|OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj|solutionrelative:openra.converter.core\\models\\codestructure\\csparameter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3C54170-D1B7-49DA-BC01-AA2E7BB5FABF}|OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj|c:\\users\\biote\\desktop\\oe_lagrange_side_projects\\openraconvertermodul\\openraconvertermodul\\openra.converter.core\\models\\codestructure\\csfield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3C54170-D1B7-49DA-BC01-AA2E7BB5FABF}|OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj|solutionrelative:openra.converter.core\\models\\codestructure\\csfield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{49B913C6-AE99-4041-BB8B-273E911B56BB}|OpenRA.Converter.Api\\OpenRA.Converter.Api.csproj|c:\\users\\biote\\desktop\\oe_lagrange_side_projects\\openraconvertermodul\\openraconvertermodul\\openra.converter.api\\controllers\\decisiontreescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -142,7 +142,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Api\\appsettings.json",
               "RelativeDocumentMoniker": "OpenRA.Converter.Api\\appsettings.json",
@@ -155,33 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "YamlCodeWriter.cs",
-              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\YamlCodeWriter.cs",
-              "RelativeDocumentMoniker": "OpenRA.Converter.Infrastructure\\Services\\YamlCodeWriter.cs",
-              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\YamlCodeWriter.cs",
-              "RelativeToolTip": "OpenRA.Converter.Infrastructure\\Services\\YamlCodeWriter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:38:15.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "YamlSynthesisService.cs",
-              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\YamlSynthesisService.cs",
-              "RelativeDocumentMoniker": "OpenRA.Converter.Infrastructure\\Services\\YamlSynthesisService.cs",
-              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\YamlSynthesisService.cs",
-              "RelativeToolTip": "OpenRA.Converter.Infrastructure\\Services\\YamlSynthesisService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:37:45.05Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "SynthesisController.cs",
               "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Api\\Controllers\\SynthesisController.cs",
               "RelativeDocumentMoniker": "OpenRA.Converter.Api\\Controllers\\SynthesisController.cs",
@@ -189,12 +163,11 @@
               "RelativeToolTip": "OpenRA.Converter.Api\\Controllers\\SynthesisController.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAcwEwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:07:17.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T10:07:17.479Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Api\\Program.cs",
               "RelativeDocumentMoniker": "OpenRA.Converter.Api\\Program.cs",
@@ -207,7 +180,70 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "CsClass.cs",
+              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Models\\CodeStructure\\CsClass.cs",
+              "RelativeDocumentMoniker": "OpenRA.Converter.Core\\Models\\CodeStructure\\CsClass.cs",
+              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Models\\CodeStructure\\CsClass.cs",
+              "RelativeToolTip": "OpenRA.Converter.Core\\Models\\CodeStructure\\CsClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T10:02:26.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TraitSynthesisService.cs",
+              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\TraitSynthesisService.cs",
+              "RelativeDocumentMoniker": "OpenRA.Converter.Infrastructure\\Services\\TraitSynthesisService.cs",
+              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\TraitSynthesisService.cs",
+              "RelativeToolTip": "OpenRA.Converter.Infrastructure\\Services\\TraitSynthesisService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T10:03:18.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CsField.cs",
+              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Models\\CodeStructure\\CsField.cs",
+              "RelativeDocumentMoniker": "OpenRA.Converter.Core\\Models\\CodeStructure\\CsField.cs",
+              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Models\\CodeStructure\\CsField.cs",
+              "RelativeToolTip": "OpenRA.Converter.Core\\Models\\CodeStructure\\CsField.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T10:01:26.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "YamlSynthesisService.cs",
+              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\YamlSynthesisService.cs",
+              "RelativeDocumentMoniker": "OpenRA.Converter.Infrastructure\\Services\\YamlSynthesisService.cs",
+              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\YamlSynthesisService.cs",
+              "RelativeToolTip": "OpenRA.Converter.Infrastructure\\Services\\YamlSynthesisService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T10:37:45.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "YamlCodeWriter.cs",
+              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\YamlCodeWriter.cs",
+              "RelativeDocumentMoniker": "OpenRA.Converter.Infrastructure\\Services\\YamlCodeWriter.cs",
+              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\YamlCodeWriter.cs",
+              "RelativeToolTip": "OpenRA.Converter.Infrastructure\\Services\\YamlCodeWriter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T10:38:15.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "IYamlCodeWriter.cs",
               "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Interfaces\\IYamlCodeWriter.cs",
               "RelativeDocumentMoniker": "OpenRA.Converter.Core\\Interfaces\\IYamlCodeWriter.cs",
@@ -215,12 +251,11 @@
               "RelativeToolTip": "OpenRA.Converter.Core\\Interfaces\\IYamlCodeWriter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:37:12.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T10:37:12.923Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "IYamlSynthesisService.cs",
               "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Interfaces\\IYamlSynthesisService.cs",
               "RelativeDocumentMoniker": "OpenRA.Converter.Core\\Interfaces\\IYamlSynthesisService.cs",
@@ -228,12 +263,11 @@
               "RelativeToolTip": "OpenRA.Converter.Core\\Interfaces\\IYamlSynthesisService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:36:46.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T10:36:46.343Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "YamlNode.cs",
               "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Models\\YamlStructure\\YamlNode.cs",
               "RelativeDocumentMoniker": "OpenRA.Converter.Core\\Models\\YamlStructure\\YamlNode.cs",
@@ -241,12 +275,11 @@
               "RelativeToolTip": "OpenRA.Converter.Core\\Models\\YamlStructure\\YamlNode.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:36:05.282Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T10:36:05.282Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "CSharpCodeWriter.cs",
               "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\CSharpCodeWriter.cs",
               "RelativeDocumentMoniker": "OpenRA.Converter.Infrastructure\\Services\\CSharpCodeWriter.cs",
@@ -258,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "ITraitSynthesisService.cs",
               "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Interfaces\\ITraitSynthesisService.cs",
               "RelativeDocumentMoniker": "OpenRA.Converter.Core\\Interfaces\\ITraitSynthesisService.cs",
@@ -270,19 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CsClass.cs",
-              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Models\\CodeStructure\\CsClass.cs",
-              "RelativeDocumentMoniker": "OpenRA.Converter.Core\\Models\\CodeStructure\\CsClass.cs",
-              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Models\\CodeStructure\\CsClass.cs",
-              "RelativeToolTip": "OpenRA.Converter.Core\\Models\\CodeStructure\\CsClass.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:02:26.978Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "CsMethod.cs",
               "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Models\\CodeStructure\\CsMethod.cs",
               "RelativeDocumentMoniker": "OpenRA.Converter.Core\\Models\\CodeStructure\\CsMethod.cs",
@@ -294,19 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TraitSynthesisService.cs",
-              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\TraitSynthesisService.cs",
-              "RelativeDocumentMoniker": "OpenRA.Converter.Infrastructure\\Services\\TraitSynthesisService.cs",
-              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\TraitSynthesisService.cs",
-              "RelativeToolTip": "OpenRA.Converter.Infrastructure\\Services\\TraitSynthesisService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBgAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:03:18.861Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "CsParameter.cs",
               "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Models\\CodeStructure\\CsParameter.cs",
               "RelativeDocumentMoniker": "OpenRA.Converter.Core\\Models\\CodeStructure\\CsParameter.cs",
@@ -315,18 +324,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-21T10:01:42.837Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CsField.cs",
-              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Models\\CodeStructure\\CsField.cs",
-              "RelativeDocumentMoniker": "OpenRA.Converter.Core\\Models\\CodeStructure\\CsField.cs",
-              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\Models\\CodeStructure\\CsField.cs",
-              "RelativeToolTip": "OpenRA.Converter.Core\\Models\\CodeStructure\\CsField.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:01:26.875Z"
             },
             {
               "$type": "Document",

@@ -12,8 +12,10 @@ namespace OpenRA.Converter.Core.Models.CodeStructure
         {
             "System",
             "System.Collections.Generic",
+            "System.Linq",
             "OpenRA.Traits",
-            "OpenRA.Mods.Common.Traits"
+            "OpenRA.Mods.Common.Traits",
+            "OpenRA.Mods.Common.Activities"
         };
 
         public string Name { get; set; } = string.Empty;
@@ -31,8 +33,13 @@ namespace OpenRA.Converter.Core.Models.CodeStructure
         public List<CsField> Fields { get; set; } = new();
         public List<CsMethod> Methods { get; set; } = new();
 
-        // For OpenRA, we typically generate pairs: An Info class and a Logic class.
-        // This property can hold the reference to the "Paired" class if this is the Logic class.
+        // Reference to the paired class (Logic -> Info)
         public CsClass? PairedInfoClass { get; set; }
+
+        /// <summary>
+        /// List of OpenRA traits (YAML) required for this C# class to function.
+        /// E.g., "Mobile", "AttackFrontal".
+        /// </summary>
+        public HashSet<string> RequiredYamlInherits { get; set; } = new();
     }
 }

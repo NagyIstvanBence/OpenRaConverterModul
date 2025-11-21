@@ -36,17 +36,27 @@ namespace OpenRA.Converter.Api.Controllers
             try
             {
                 var rootNode = _treeService.ParseTree(payload);
+                var validationErrors = _treeService.ValidateTree(rootNode);
+                if (validationErrors.Count > 0) return BadRequest(new { Errors = validationErrors });
+
+                // Synthesize using the new "Smart" service
                 var classStructure = _csharpSynthesisService.SynthesizeTrait(rootNode, traitName);
+
+                // Convert structure to string
                 var code = _csharpWriter.WriteClass(classStructure);
 
                 return Ok(new
                 {
                     FileName = $"{traitName}.cs",
                     Code = code,
+                    // Return the auto-detected dependencies so the UI can show them
                     DetectedDependencies = classStructure.RequiredYamlInherits
                 });
             }
-            catch (Exception ex) { return StatusCode(500, new { Error = ex.Message }); }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Error = ex.Message });
+            }
         }
 
         [HttpPost("generate-yaml")]
@@ -55,6 +65,8 @@ namespace OpenRA.Converter.Api.Controllers
             try
             {
                 var rootNode = _treeService.ParseTree(payload);
+                var validationErrors = _treeService.ValidateTree(rootNode);
+                if (validationErrors.Count > 0) return BadRequest(new { Errors = validationErrors });
 
                 // 1. Run C# Synthesis first to detect parameters & dependencies
                 var classStructure = _csharpSynthesisService.SynthesizeTrait(rootNode, traitName);

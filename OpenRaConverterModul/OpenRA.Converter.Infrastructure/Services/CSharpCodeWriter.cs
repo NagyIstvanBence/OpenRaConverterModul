@@ -77,11 +77,22 @@ namespace OpenRA.Converter.Infrastructure.Services
             // Methods
             foreach (var method in csClass.Methods)
             {
-                sb.AppendLine($"{innerIndent}{method.GetSignature()}");
-                sb.AppendLine($"{innerIndent}{{");
-                foreach (var line in method.BodyLines)
+                var signature = method.GetSignature();
+                int startBodyIndex = 0;
+
+                // FIX: Check for Constructor Initializer (e.g. : base(info))
+                // If the first body line starts with ':', treat it as part of the signature.
+                if (method.BodyLines.Count > 0 && method.BodyLines[0].Trim().StartsWith(":"))
                 {
-                    sb.AppendLine($"{innerIndent}\t{line}");
+                    signature += " " + method.BodyLines[0].Trim();
+                    startBodyIndex = 1;
+                }
+
+                sb.AppendLine($"{innerIndent}{signature}");
+                sb.AppendLine($"{innerIndent}{{");
+                for (int i = startBodyIndex; i < method.BodyLines.Count; i++)
+                {
+                    sb.AppendLine($"{innerIndent}\t{method.BodyLines[i]}");
                 }
                 sb.AppendLine($"{innerIndent}}}");
                 sb.AppendLine();

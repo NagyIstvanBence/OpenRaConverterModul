@@ -7,7 +7,8 @@ namespace OpenRA.Converter.Core.Interfaces
     public interface IYamlSynthesisService
     {
         /// <summary>
-        /// Generates a complete Actor definition YAML.
+        /// Generates a complete Actor definition YAML containing the standard boilerplate
+        /// and attaching the generated custom trait.
         /// </summary>
         /// <param name="rootNode">The decision tree root.</param>
         /// <param name="generatedTrait">The synthesized C# class (contains detected fields/dependencies).</param>

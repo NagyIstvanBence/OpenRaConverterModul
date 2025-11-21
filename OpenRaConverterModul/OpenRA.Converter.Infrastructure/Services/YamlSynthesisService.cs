@@ -16,27 +16,31 @@ namespace OpenRA.Converter.Infrastructure.Services
             // 1. Basic Inheritance
             actorNode.Children.Add(new YamlNode("Inherits", "^Soldier"));
 
-            // 2. Auto-detected Dependencies from C# Analysis
-            // (e.g. if code used Mobile, we verify/add it here, or add specific config overrides)
+            // 2. Auto-detected Dependencies
             if (generatedTrait.RequiredYamlInherits.Count > 0)
             {
-                // In OpenRA, you usually inherit the whole ^Soldier, but if we needed specific traits
-                // we might add them here. For now, we just add a comment listing them.
-                var deps = string.Join(", ", generatedTrait.RequiredYamlInherits);
+                var deps = string.Join(", ", generatedTrait.RequiredYamlInherits.Distinct());
                 actorNode.Children.Add(new YamlNode("Comment", $"Detected Dependencies: {deps}") { Comment = "Logic requirements" });
             }
 
             // 3. The Custom Trait
+            // This Key will match the C# class name (e.g. BazookaLogic)
             var customTraitNode = new YamlNode(generatedTrait.Name);
 
             // 4. Dynamic Parameters
-            // Iterate over the Info class fields we just generated and add them to YAML
             if (generatedTrait.PairedInfoClass != null)
             {
                 foreach (var field in generatedTrait.PairedInfoClass.Fields.Where(f => f.IsExposedToYaml))
                 {
-                    // Use initial value as default
-                    string val = field.InitialValue?.Replace("\"", "") ?? "0";
+                    // Skip RequiresCondition to avoid disabling the trait accidentally
+                    if (field.Name == "RequiresCondition") continue;
+
+                    string val = field.InitialValue?.Replace("\"", "") ?? "";
+
+                    // If int is missing, default to 0. If string is missing, keep empty.
+                    if (field.Type == "int" && string.IsNullOrEmpty(val)) val = "0";
+                    if (field.Type == "bool" && string.IsNullOrEmpty(val)) val = "false";
+
                     customTraitNode.Children.Add(new YamlNode(field.Name, val));
                 }
             }

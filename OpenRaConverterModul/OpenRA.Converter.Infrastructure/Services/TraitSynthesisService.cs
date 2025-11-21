@@ -28,16 +28,32 @@ namespace OpenRA.Converter.Infrastructure.Services
             {
                 Name = $"{traitName}Info",
                 Inherits = "ConditionalTraitInfo",
-                Usings = new List<string> { "OpenRA.Traits" }
+                Usings = new List<string> { "OpenRA.Traits", "OpenRA.Mods.Common.Traits", "OpenRA.Mods.Common.Activities" }
             };
 
+            // FIX: Do NOT add RequiresCondition here. It is inherited from ConditionalTraitInfo.
+            // Adding it manually causes "RequiresCondition: 0" in YAML, which disables the trait.
+
+            // FIX: Explicitly add Period so it appears in YAML
             infoClass.Fields.Add(new CsField
             {
-                Name = "RequiresCondition",
-                Type = "string",
+                Name = "Period",
+                Type = "int",
                 IsExposedToYaml = true,
-                Description = "Condition required to enable this trait."
+                InitialValue = "25",
+                Description = "Time in ticks to wait between checks."
             });
+
+            // FIX: Add Create override (Required by OpenRA)
+            var createMethod = new CsMethod
+            {
+                Name = "Create",
+                ReturnType = "object",
+                AccessModifier = "public override"
+            };
+            createMethod.Parameters.Add(new CsParameter("ActorInitializer", "init"));
+            createMethod.BodyLines.Add($"return new {traitName}(init.Self, this);");
+            infoClass.Methods.Add(createMethod);
 
             // 2. Logic Class
             var logicClass = new CsClass
@@ -53,8 +69,9 @@ namespace OpenRA.Converter.Infrastructure.Services
             AddBoilerplateMethods(logicClass, traitName);
 
             // 3. Process Logic
-            // Pass 'infoClass' so we can add new fields to it during processing
             var tickMethod = logicClass.Methods.First(m => m.Name == "Tick");
+
+            // Use Smart Branching logic (handling negations as 'else')
             ProcessNode(rootNode, tickMethod.BodyLines, 0, logicClass, infoClass);
 
             return logicClass;
@@ -66,56 +83,136 @@ namespace OpenRA.Converter.Infrastructure.Services
             var ctor = new CsMethod { Name = traitName, ReturnType = "", AccessModifier = "public" };
             ctor.Parameters.Add(new CsParameter("Actor", "self"));
             ctor.Parameters.Add(new CsParameter($"{traitName}Info", "info"));
-            ctor.BodyLines.Add(": base(info) { }");
+            ctor.BodyLines.Add(": base(info)");
+            ctor.BodyLines.Add("_ticksRemaining = info.Period;");
             logicClass.Methods.Add(ctor);
+
+            // Field for timer
+            logicClass.Fields.Add(new CsField { Name = "_ticksRemaining", Type = "int", AccessModifier = "private" });
 
             // Created
             var created = new CsMethod { Name = "Created", ReturnType = "void", ExplicitInterfaceImplementation = "INotifyCreated" };
             created.Parameters.Add(new CsParameter("Actor", "self"));
+            // Cache traits here if needed
             logicClass.Methods.Add(created);
 
             // Tick
             var tick = new CsMethod { Name = "Tick", ReturnType = "void", ExplicitInterfaceImplementation = "ITick" };
             tick.Parameters.Add(new CsParameter("Actor", "self"));
             tick.BodyLines.Add("if (IsTraitDisabled) return;");
+
+            // FIX: Safety Check - Prevent freezing the game
+            tick.BodyLines.Add("if (self.CurrentActivity != null) return;");
+
+            // FIX: Period Timer
+            tick.BodyLines.Add("if (--_ticksRemaining > 0) return;");
+            tick.BodyLines.Add("_ticksRemaining = Info.Period;");
             tick.BodyLines.Add("");
+
             logicClass.Methods.Add(tick);
         }
 
-        private void ProcessNode(DecisionNode node, List<string> bodyLines, int indentLevel, CsClass logicClass, CsClass infoClass)
+        private void ProcessNode(DecisionNode node, List<string> bodyLines, int indentLevel, CsClass logicClass, CsClass infoClass, bool skipConditionWrapper = false)
         {
-            string indent = new string(' ', indentLevel * 4);
+            string indent = new string('\t', indentLevel);
 
-            if (!string.IsNullOrWhiteSpace(node.Condition))
+            // Smart Branching: Split children into True/False buckets based on Parent Negation
+            var trueChildren = new List<DecisionNode>();
+            var falseChildren = new List<DecisionNode>();
+
+            if (node.Children != null)
+            {
+                foreach (var child in node.Children)
+                {
+                    if (!string.IsNullOrWhiteSpace(node.Condition) && IsNegation(node.Condition, child.Condition))
+                        falseChildren.Add(child);
+                    else
+                        trueChildren.Add(child);
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(node.Condition) && !skipConditionWrapper)
             {
                 string conditionCode = MapConditionToCSharp(node.Condition, logicClass, infoClass);
                 bodyLines.Add($"{indent}if ({conditionCode})");
                 bodyLines.Add($"{indent}{{");
 
                 if (node.IsLeaf && !string.IsNullOrWhiteSpace(node.Action))
-                {
-                    string actionCode = MapActionToCSharp(node.Action, logicClass, infoClass);
-                    bodyLines.Add($"{indent}    {actionCode}");
-                }
+                    bodyLines.Add($"{indent}\t{MapActionToCSharp(node.Action, logicClass, infoClass)}");
 
-                if (node.Children != null)
-                {
-                    foreach (var child in node.Children) ProcessNode(child, bodyLines, indentLevel + 1, logicClass, infoClass);
-                }
+                ProcessChildList(trueChildren, bodyLines, indentLevel + 1, logicClass, infoClass);
+
                 bodyLines.Add($"{indent}}}");
+
+                if (falseChildren.Any())
+                {
+                    bodyLines.Add($"{indent}else");
+                    bodyLines.Add($"{indent}{{");
+                    ProcessChildList(falseChildren, bodyLines, indentLevel + 1, logicClass, infoClass, stripCondition: true);
+                    bodyLines.Add($"{indent}}}");
+                }
             }
             else
             {
+                // Root node or Inside Else block
                 if (node.IsLeaf && !string.IsNullOrWhiteSpace(node.Action))
+                    bodyLines.Add($"{indent}{MapActionToCSharp(node.Action, logicClass, infoClass)}");
+
+                ProcessChildList(node.Children, bodyLines, indentLevel, logicClass, infoClass);
+            }
+        }
+
+        private void ProcessChildList(List<DecisionNode> nodes, List<string> bodyLines, int indentLevel, CsClass logicClass, CsClass infoClass, bool stripCondition = false)
+        {
+            if (nodes == null) return;
+            string indent = new string('\t', indentLevel);
+            var processed = new HashSet<DecisionNode>();
+
+            for (int i = 0; i < nodes.Count; i++)
+            {
+                var currentNode = nodes[i];
+                if (processed.Contains(currentNode)) continue;
+
+                // Optimization: Check for Sibling Negation (if A else !A)
+                DecisionNode negationNode = null;
+                for (int j = i + 1; j < nodes.Count; j++)
                 {
-                    string actionCode = MapActionToCSharp(node.Action, logicClass, infoClass);
-                    bodyLines.Add($"{indent}{actionCode}");
+                    if (!processed.Contains(nodes[j]) && IsNegation(currentNode.Condition, nodes[j].Condition))
+                    {
+                        negationNode = nodes[j];
+                        break;
+                    }
                 }
-                if (node.Children != null)
+
+                if (negationNode != null)
                 {
-                    foreach (var child in node.Children) ProcessNode(child, bodyLines, indentLevel, logicClass, infoClass);
+                    // Found a pair, generate if/else
+                    ProcessNode(currentNode, bodyLines, indentLevel, logicClass, infoClass, skipConditionWrapper: false);
+
+                    processed.Add(currentNode);
+                    processed.Add(negationNode);
+
+                    bodyLines.Add($"{indent}else");
+                    bodyLines.Add($"{indent}{{");
+                    ProcessNode(negationNode, bodyLines, indentLevel + 1, logicClass, infoClass, skipConditionWrapper: true);
+                    bodyLines.Add($"{indent}}}");
+                }
+                else
+                {
+                    ProcessNode(currentNode, bodyLines, indentLevel, logicClass, infoClass, skipConditionWrapper: stripCondition);
+                    processed.Add(currentNode);
                 }
             }
+        }
+
+        private bool IsNegation(string conditionA, string conditionB)
+        {
+            if (string.IsNullOrEmpty(conditionA) || string.IsNullOrEmpty(conditionB)) return false;
+            var a = conditionA.Trim();
+            var b = conditionB.Trim();
+            if (a.Equals($"Not {b}", StringComparison.OrdinalIgnoreCase) || b.Equals($"Not {a}", StringComparison.OrdinalIgnoreCase)) return true;
+            if (a.Equals($"!{b}", StringComparison.OrdinalIgnoreCase) || b.Equals($"!{a}", StringComparison.OrdinalIgnoreCase)) return true;
+            return false;
         }
 
         private string MapConditionToCSharp(string rawCondition, CsClass logicClass, CsClass infoClass)
@@ -123,15 +220,7 @@ namespace OpenRA.Converter.Infrastructure.Services
             var parsed = _decisionTreeService.ParseConditionString(rawCondition);
             string expression;
 
-            // 1. Check Registry
-            var traitSchema = _registry.GetTrait(parsed.Variable);
-            if (traitSchema != null)
-            {
-                logicClass.RequiredYamlInherits.Add(traitSchema.Name);
-                expression = $"!self.Trait<{traitSchema.Name}>().IsTraitPaused";
-            }
-            // 2. Health Logic
-            else if (parsed.Variable.Equals("Health", StringComparison.OrdinalIgnoreCase))
+            if (parsed.Variable.Equals("Health", StringComparison.OrdinalIgnoreCase))
             {
                 logicClass.RequiredYamlInherits.Add("Health");
                 string op = parsed.Operator ?? "<";
@@ -139,28 +228,20 @@ namespace OpenRA.Converter.Infrastructure.Services
 
                 if (double.TryParse(valStr, NumberStyles.Any, CultureInfo.InvariantCulture, out double val))
                 {
-                    double multiplier = val / 100.0;
-                    expression = $"self.Trait<Health>().HP {op} (int)(self.Trait<Health>().MaxHP * {multiplier.ToString("F2", CultureInfo.InvariantCulture)})";
+                    expression = $"self.Trait<Health>().HP {op} (int)(self.Trait<Health>().MaxHP * {val / 100.0})";
                 }
                 else
                 {
-                    // Dynamic Parameter Detection for Health Threshold
-                    // e.g. "Health < CriticalLevel" -> Create field 'CriticalLevel'
                     string paramName = EnsureField(infoClass, valStr, "int", "50");
-                    // Assuming input is percentage integer
                     expression = $"self.Trait<Health>().HP {op} (int)(self.Trait<Health>().MaxHP * (Info.{paramName} / 100f))";
                 }
             }
-            // 3. Visibility
             else if (parsed.Variable.Equals("EnemyVisible", StringComparison.OrdinalIgnoreCase))
             {
                 expression = "self.World.ActorMap.GetActorsAt(self.Location).Any(a => a.Owner.RelationshipWith(self.Owner) == PlayerRelationship.Enemy)";
             }
-            // 4. Fallback / Custom Variable
             else
             {
-                // Treat unknown variables as boolean flags in the Info class
-                // e.g. condition: "IsAggressive" -> Info.IsAggressive
                 string paramName = EnsureField(infoClass, parsed.Variable, "bool", "false");
                 expression = $"Info.{paramName}";
             }
@@ -182,44 +263,42 @@ namespace OpenRA.Converter.Infrastructure.Services
                 args = match.Groups[1].Value;
             }
 
+            // FIX: Split arguments to handle multiple params like "Wait(Period, true)"
+            var argList = args.Split(',').Select(a => a.Trim()).ToList();
+            string firstArg = argList.FirstOrDefault() ?? "";
+
             if (method.Equals("Wait", StringComparison.OrdinalIgnoreCase))
             {
-                // Check if arg is number
-                if (int.TryParse(args, out int ticks))
-                {
-                    return $"self.QueueActivity(new Wait({ticks}));";
-                }
-                else
-                {
-                    // Dynamic Parameter: Wait(MyDelay)
-                    string paramName = EnsureField(infoClass, args, "int", "25");
-                    return $"self.QueueActivity(new Wait(Info.{paramName}));";
-                }
+                if (int.TryParse(firstArg, out int ticks)) return $"self.QueueActivity(new Wait({ticks}));";
+
+                string paramName = EnsureField(infoClass, firstArg, "int", "25");
+                return $"self.QueueActivity(new Wait(Info.{paramName}));";
             }
 
-            // ... (Existing mappings for Attack, Move, Hunt remain same) ...
-            // Just adding brief catch-all for logic flow completeness
-            if (method.Equals("Attack", StringComparison.OrdinalIgnoreCase))
+            if (method.Contains("Attack", StringComparison.OrdinalIgnoreCase) || method.Contains("Hunt"))
             {
                 logicClass.RequiredYamlInherits.Add("Armament");
                 logicClass.RequiredYamlInherits.Add("AttackFrontal");
                 logicClass.RequiredYamlInherits.Add("Mobile");
+
+                if (method.Contains("Hunt")) return "self.QueueActivity(new Hunt(self));";
                 return "self.QueueActivity(new AttackMoveActivity(self, self.Trait<Mobile>().MoveTo));";
+            }
+
+            if (method.Equals("Move", StringComparison.OrdinalIgnoreCase))
+            {
+                logicClass.RequiredYamlInherits.Add("Mobile");
+                return "self.QueueActivity(new Move(self, self.Location)); // Warning: Destination undefined";
             }
 
             return $"// TODO: Implement Action -> {rawAction}";
         }
 
-        /// <summary>
-        /// Checks if a field exists in the Info class. If not, creates it.
-        /// </summary>
         private string EnsureField(CsClass infoClass, string rawName, string type, string defaultValue)
         {
-            // Sanitize name
+            // Sanitize name (Fixes Periodtrue bug)
             string fieldName = Regex.Replace(rawName, "[^a-zA-Z0-9]", "");
             if (string.IsNullOrEmpty(fieldName)) fieldName = "Param" + infoClass.Fields.Count;
-
-            // Capitalize
             fieldName = char.ToUpper(fieldName[0]) + fieldName.Substring(1);
 
             if (!infoClass.Fields.Any(f => f.Name == fieldName))

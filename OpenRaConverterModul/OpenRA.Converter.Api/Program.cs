@@ -3,20 +3,20 @@ using OpenRA.Converter.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// --- Services Registration ---
+// --- Service Registration ---
 
-// 1. Reference Handling
+// 1. References (Truth Source)
 builder.Services.AddSingleton<IReferenceRegistry, ReferenceRegistry>();
 builder.Services.AddScoped<IReferenceIngestionService, ReferenceIngestionService>();
 
-// 2. Decision Tree Handling
+// 2. Decision Tree (Parsing & Logic)
 builder.Services.AddScoped<IDecisionTreeService, DecisionTreeService>();
 
-// 3. C# Code Generation
+// 3. Synthesis (Code Generation)
 builder.Services.AddScoped<ITraitSynthesisService, TraitSynthesisService>();
 builder.Services.AddScoped<ICodeWriter, CSharpCodeWriter>();
 
-// 4. YAML Code Generation (New)
+// 4. YAML Generation
 builder.Services.AddScoped<IYamlSynthesisService, YamlSynthesisService>();
 builder.Services.AddScoped<IYamlCodeWriter, YamlCodeWriter>();
 
@@ -26,6 +26,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// -- Middleware --
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

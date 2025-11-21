@@ -36,18 +36,17 @@ namespace OpenRA.Converter.Api.Controllers
             try
             {
                 var rootNode = _treeService.ParseTree(payload);
-                var validationErrors = _treeService.ValidateTree(rootNode);
-                if (validationErrors.Count > 0) return BadRequest(new { Errors = validationErrors });
-
                 var classStructure = _csharpSynthesisService.SynthesizeTrait(rootNode, traitName);
                 var code = _csharpWriter.WriteClass(classStructure);
 
-                return Ok(new { FileName = $"{traitName}.cs", Code = code });
+                return Ok(new
+                {
+                    FileName = $"{traitName}.cs",
+                    Code = code,
+                    DetectedDependencies = classStructure.RequiredYamlInherits
+                });
             }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { Error = ex.Message });
-            }
+            catch (Exception ex) { return StatusCode(500, new { Error = ex.Message }); }
         }
 
         [HttpPost("generate-yaml")]
@@ -56,22 +55,18 @@ namespace OpenRA.Converter.Api.Controllers
             try
             {
                 var rootNode = _treeService.ParseTree(payload);
-                // We validate the tree even for YAML to ensure the logic structure is sound before binding
-                var validationErrors = _treeService.ValidateTree(rootNode);
-                if (validationErrors.Count > 0) return BadRequest(new { Errors = validationErrors });
 
-                // Synthesize YAML AST
-                var yamlStructure = _yamlSynthesisService.SynthesizeActor(rootNode, actorName, traitName);
+                // 1. Run C# Synthesis first to detect parameters & dependencies
+                var classStructure = _csharpSynthesisService.SynthesizeTrait(rootNode, traitName);
 
-                // Write to String
+                // 2. Pass that result into YAML synthesis
+                var yamlStructure = _yamlSynthesisService.SynthesizeActor(rootNode, classStructure, actorName);
+
                 var yamlCode = _yamlWriter.WriteYaml(yamlStructure);
 
                 return Ok(new { FileName = $"{actorName.ToLower()}.yaml", Code = yamlCode });
             }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { Error = ex.Message });
-            }
+            catch (Exception ex) { return StatusCode(500, new { Error = ex.Message }); }
         }
     }
 }

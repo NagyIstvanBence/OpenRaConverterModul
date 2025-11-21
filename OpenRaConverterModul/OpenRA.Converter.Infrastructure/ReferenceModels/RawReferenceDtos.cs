@@ -1,15 +1,22 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace OpenRA.Converter.Infrastructure.ReferenceModels
 {
-    // DTOs for deserialization matching the provided JSON files exactly.
-
+    /// <summary>
+    /// Represents the root object of the JSON request for reference ingestion.
+    /// </summary>
     public class RawReferenceRequest
     {
+        // The JSON might come as { "Data": [...] } or just [...] depending on the source.
+        // We handle the mapping logic in the service, but this DTO is for the { "Data": ... } wrapper case.
         [JsonPropertyName("Data")]
         public List<object>? Data { get; set; }
     }
 
+    /// <summary>
+    /// Represents a single row in the raw traits.json file.
+    /// </summary>
     public class RawTraitRow
     {
         [JsonPropertyName("id")]
@@ -37,6 +44,9 @@ namespace OpenRA.Converter.Infrastructure.ReferenceModels
         public string? RequireTraits { get; set; }
     }
 
+    /// <summary>
+    /// Represents a single row in the raw weapons.json file.
+    /// </summary>
     public class RawWeaponRow
     {
         [JsonPropertyName("id")]

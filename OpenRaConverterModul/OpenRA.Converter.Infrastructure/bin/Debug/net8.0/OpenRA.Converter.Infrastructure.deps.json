@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "OpenRA.Converter.Infrastructure/1.0.0": {
+        "dependencies": {
+          "OpenRA.Converter.Core": "1.0.0"
+        },
+        "runtime": {
+          "OpenRA.Converter.Infrastructure.dll": {}
+        }
+      },
+      "OpenRA.Converter.Core/1.0.0": {
+        "runtime": {
+          "OpenRA.Converter.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OpenRA.Converter.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OpenRA.Converter.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

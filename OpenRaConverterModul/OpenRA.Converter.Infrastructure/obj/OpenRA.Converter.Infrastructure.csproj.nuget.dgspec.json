@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\biote\\source\\repos\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj": {}
+    "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\biote\\source\\repos\\OpenRaConverterModul\\OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj": {
+    "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\biote\\source\\repos\\OpenRaConverterModul\\OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj",
+        "projectUniqueName": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj",
         "projectName": "OpenRA.Converter.Core",
-        "projectPath": "C:\\Users\\biote\\source\\repos\\OpenRaConverterModul\\OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj",
+        "projectPath": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj",
         "packagesPath": "C:\\Users\\biote\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\biote\\source\\repos\\OpenRaConverterModul\\OpenRA.Converter.Core\\obj\\",
+        "outputPath": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\biote\\source\\repos\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj": {
+    "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\biote\\source\\repos\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj",
         "projectName": "OpenRA.Converter.Infrastructure",
-        "projectPath": "C:\\Users\\biote\\source\\repos\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\biote\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\biote\\source\\repos\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\biote\\source\\repos\\OpenRaConverterModul\\OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj": {
-                "projectPath": "C:\\Users\\biote\\source\\repos\\OpenRaConverterModul\\OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj"
+              "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj": {
+                "projectPath": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Core\\OpenRA.Converter.Core.csproj"
               }
             }
           }

@@ -26,7 +26,7 @@ namespace OpenRA.Converter.Infrastructure.Services
             sb.AppendLine($"namespace {csClass.Namespace}");
             sb.AppendLine("{");
 
-            // 3. Info Class (Configuration) - usually nested or adjacent
+            // 3. Info Class (Configuration)
             if (csClass.PairedInfoClass != null)
             {
                 WriteClassDefinition(sb, csClass.PairedInfoClass, 1);
@@ -80,8 +80,14 @@ namespace OpenRA.Converter.Infrastructure.Services
                 var signature = method.GetSignature();
                 int startBodyIndex = 0;
 
-                // FIX: Check for Constructor Initializer (e.g. : base(info))
-                // If the first body line starts with ':', treat it as part of the signature.
+                // JAVÍTÁS: Biztonsági ellenőrzés explicit interface implementációhoz
+                // Ha a szignatúra tartalmaz pontot (pl. ITick.Tick) ÉS public-kal kezdődik, akkor töröljük a public-ot.
+                if (signature.Trim().StartsWith("public") && signature.Contains("."))
+                {
+                    signature = signature.Replace("public ", "").Trim();
+                }
+
+                // Check for Constructor Initializer (e.g. : base(info))
                 if (method.BodyLines.Count > 0 && method.BodyLines[0].Trim().StartsWith(":"))
                 {
                     signature += " " + method.BodyLines[0].Trim();

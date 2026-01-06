@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F5A4F536-72E1-48D5-8A4B-50B46C224B62}|OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj|c:\\users\\biote\\desktop\\oe_lagrange_side_projects\\openraconvertermodul\\openraconvertermodul\\openra.converter.infrastructure\\services\\csharpcodewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5A4F536-72E1-48D5-8A4B-50B46C224B62}|OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj|solutionrelative:openra.converter.infrastructure\\services\\csharpcodewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4F12D306-FD93-4455-BD3B-BE690FA34003}|OpenRA.Converter.Tests\\OpenRA.Converter.Tests.csproj|c:\\users\\biote\\desktop\\oe_lagrange_side_projects\\openraconvertermodul\\openraconvertermodul\\openra.converter.tests\\infrastructure\\traitsynthesisservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F12D306-FD93-4455-BD3B-BE690FA34003}|OpenRA.Converter.Tests\\OpenRA.Converter.Tests.csproj|solutionrelative:openra.converter.tests\\infrastructure\\traitsynthesisservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5A4F536-72E1-48D5-8A4B-50B46C224B62}|OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj|c:\\users\\biote\\desktop\\oe_lagrange_side_projects\\openraconvertermodul\\openraconvertermodul\\openra.converter.infrastructure\\services\\csharpcodewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5A4F536-72E1-48D5-8A4B-50B46C224B62}|OpenRA.Converter.Infrastructure\\OpenRA.Converter.Infrastructure.csproj|solutionrelative:openra.converter.infrastructure\\services\\csharpcodewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\biote\\Downloads\\json_output (1)\\ra_bazooka.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
@@ -155,11 +155,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CSharpCodeWriter.cs",
               "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Infrastructure\\Services\\CSharpCodeWriter.cs",
               "RelativeDocumentMoniker": "OpenRA.Converter.Infrastructure\\Services\\CSharpCodeWriter.cs",
@@ -172,15 +172,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ra_bazooka.json",
-              "DocumentMoniker": "C:\\Users\\biote\\Downloads\\json_output (1)\\ra_bazooka.json",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Downloads\\json_output (1)\\ra_bazooka.json",
-              "ToolTip": "C:\\Users\\biote\\Downloads\\json_output (1)\\ra_bazooka.json",
-              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\json_output (1)\\ra_bazooka.json",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCoAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-21T12:04:17.721Z",
+              "DocumentIndex": 4,
+              "Title": "ReferencesController.cs",
+              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Api\\Controllers\\ReferencesController.cs",
+              "RelativeDocumentMoniker": "OpenRA.Converter.Api\\Controllers\\ReferencesController.cs",
+              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Api\\Controllers\\ReferencesController.cs",
+              "RelativeToolTip": "OpenRA.Converter.Api\\Controllers\\ReferencesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T09:46:55.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TraitSynthesisServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Tests\\Infrastructure\\TraitSynthesisServiceTests.cs",
+              "RelativeDocumentMoniker": "OpenRA.Converter.Tests\\Infrastructure\\TraitSynthesisServiceTests.cs",
+              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Tests\\Infrastructure\\TraitSynthesisServiceTests.cs",
+              "RelativeToolTip": "OpenRA.Converter.Tests\\Infrastructure\\TraitSynthesisServiceTests.cs",
+              "ViewState": "AgIAAP0AAAAAAAAAAAAmwBIBAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T10:58:56.544Z",
               "EditorCaption": ""
             },
             {
@@ -197,27 +209,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ReferencesController.cs",
-              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Api\\Controllers\\ReferencesController.cs",
-              "RelativeDocumentMoniker": "OpenRA.Converter.Api\\Controllers\\ReferencesController.cs",
-              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Api\\Controllers\\ReferencesController.cs",
-              "RelativeToolTip": "OpenRA.Converter.Api\\Controllers\\ReferencesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T09:46:55.011Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TraitSynthesisServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Tests\\Infrastructure\\TraitSynthesisServiceTests.cs",
-              "RelativeDocumentMoniker": "OpenRA.Converter.Tests\\Infrastructure\\TraitSynthesisServiceTests.cs",
-              "ToolTip": "C:\\Users\\biote\\Desktop\\OE_Lagrange_Side_Projects\\OpenRaConverterModul\\OpenRaConverterModul\\OpenRA.Converter.Tests\\Infrastructure\\TraitSynthesisServiceTests.cs",
-              "RelativeToolTip": "OpenRA.Converter.Tests\\Infrastructure\\TraitSynthesisServiceTests.cs",
-              "ViewState": "AgIAAPEAAAAAAAAAAAAmwD8BAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T10:58:56.544Z",
+              "DocumentIndex": 2,
+              "Title": "ra_bazooka.json",
+              "DocumentMoniker": "C:\\Users\\biote\\Downloads\\json_output (1)\\ra_bazooka.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Downloads\\json_output (1)\\ra_bazooka.json",
+              "ToolTip": "C:\\Users\\biote\\Downloads\\json_output (1)\\ra_bazooka.json",
+              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\json_output (1)\\ra_bazooka.json",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-21T12:04:17.721Z",
               "EditorCaption": ""
             },
             {
